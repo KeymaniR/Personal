@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dex</title>
+    
+    <link rel = "stylesheet" href= "styles.css"></link>
+</head>
+<body onload = "server()">
+    <h2 class = "title">PokeDex</h2>
+    <div class = "dex">
+        <div class = "monBasic">
+            <div class = "pic" id="sprites"></div>
+          <div class = "arr">  <i id="arrowLeft" class="arrow left"></i><i id="arrowRight" class="arrow right"></i> </div>
+          <div class = "enterName"> <input type = 'text' class="monInput"/> <button type = 'button' onclick = "server()"> Search </button></div>
+            
+            <p class = "name">Name: </p><br>
+            <p class = "type">Type(s): </p><br>
+        </div>
+        <div class = "monBasic">
+            <p class = "abs">Abilities: </p><br>
+            <p class = "abEx"></p><br>
+            <p class = "stats">Base Stats: </p><br>
+            <p class = "moveSet">Moveset: <br></p><br>
+        </div>  
+    </div>
+</body>
+
+<script src="scripts.js"></script>
+</html>
