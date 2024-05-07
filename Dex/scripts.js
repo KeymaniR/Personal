@@ -21,6 +21,7 @@ function keydown(evt){
 
     if (evt.keyCode === 13){
         server();
+      
     }
 }
 
@@ -38,6 +39,7 @@ async function server(){
   const response = await fetch(apiUrl);
   const data = await response.json(); 
 
+  abEx.style.display = 'none';
   clearInfo();
   showMon(data);
 
@@ -82,7 +84,6 @@ function showMon(data){
 }
 
 async function showAbility(lnk){
-    console.log(lnk.getAttribute('value'));
     var clkAbililty = lnk.getAttribute('value');
 
     abApiUrl = `https://pokeapi.co/api/v2/ability/${clkAbililty}`;
@@ -90,17 +91,15 @@ async function showAbility(lnk){
     const abRespond = await fetch(abApiUrl);
     const abData = await abRespond.json();
 
+    //console.log(abData);
 
-    const pokeData = JSON.stringify(abData, null, 2); 
-    const dexData = JSON.parse(pokeData);
 
-    console.log(abData);
-
-    for(let absBrk of abData){
-        abEx.style.display = 'block';
-        //abEx.innerHTML = abEx.
+    for(var i = 0; i < abData.effect_entries.length; i++){
+        if (abData.effect_entries[i].language.name === 'en'){
+            abEx.style.display = 'block';
+            abEx.innerHTML = abData.effect_entries[i].short_effect;
+        }
     }
-
 }
 
 function clearInfo(){
