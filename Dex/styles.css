@@ -85,7 +85,9 @@ a:visited{
 }
 
 .abEx{
-    display: none;
+    margin: auto;
+    text-align: center;
+    font-style: italic;
 }
 
 
