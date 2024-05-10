@@ -13,6 +13,8 @@ const arrowRight = document.getElementById("arrowRight");
 var sprite = new Image();
 const monList = document.querySelector('.monList');
 const abEx = document.querySelector('.abEx');
+const monOne = document.querySelector('.monOne');
+const monTwo = document.querySelector('.monTwo');
 
 document.onkeydown = keydown;
 
@@ -30,11 +32,11 @@ async function server(){
 
   monEnteredName = document.querySelector('.monInput').value.toLowerCase();
 
-  if (monEnteredName == ''){
+ /* if (monEnteredName == ''){
   apiUrl = `https://pokeapi.co/api/v2/pokemon/${moniD}`;
   }else{
   apiUrl = `https://pokeapi.co/api/v2/pokemon/${monEnteredName}`;
-  }
+  }*/
 
   const response = await fetch(apiUrl);
   const data = await response.json(); 
@@ -86,7 +88,7 @@ function showMon(data){
 async function showAbility(lnk){
     var clkAbililty = lnk.getAttribute('value');
 
-    abApiUrl = `https://pokeapi.co/api/v2/ability/${clkAbililty}`;
+   // abApiUrl = `https://pokeapi.co/api/v2/ability/${clkAbililty}`;
     
     const abRespond = await fetch(abApiUrl);
     const abData = await abRespond.json();
@@ -124,11 +126,54 @@ function decrement(){
 }
 
 function increment(){
-  console.log(moniD);
+  //console.log(moniD);
     moniD = parseInt(moniD);
     moniD += 1;
     moniD = moniD.toString();
     clearInfo();
     server();
+}
+
+function compare(){
+    //Grab values in first and second input values and then run their names through API call
+    const compAPI = "";
+
+    if (monOne.value != "" && monTwo.value != ""){
+        showMonOne(monOne.value);
+        showMonTwo(monTwo.value);
+    }
+
+
+
+ /* if (monEnteredName == ''){
+  apiUrl = `https://pokeapi.co/api/v2/pokemon/${moniD}`;
+  }else{
+  apiUrl = `https://pokeapi.co/api/v2/pokemon/${monEnteredName}`;
+  }*/
+
+    console.log(monOne.value);
+
+    console.log(monTwo.value);
+}
+
+async function showMonOne(){
+
+    //compAPI = `https://pokeapi.co/api/v2/pokemon/${monOne.value}`;
+
+    const compResponse = await fetch(compAPI);
+    const data = await compResponse.json(); 
+
+    console.log(data);
+}
+
+
+async function showMonTwo(){
+
+   // compAPI = `https://pokeapi.co/api/v2/pokemon/${monTwo.value}`;
+
+    const compResponse = await fetch(compAPI);
+    const data = await compResponse.json(); 
+
+    console.log(data);
 }
 
