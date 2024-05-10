@@ -9,7 +9,9 @@
 </head>
 <body onload = "server()">
     <h2 class = "title">PokeDex</h2>
-    <div class = "dex">
+<div class = "container">
+
+    <div class = item-a>
         <div class = "monBasic">
             <div class = "pic" id="sprites"></div>
           <div class = "arr">  <i id="arrowLeft" class="arrow left"></i><i id="arrowRight" class="arrow right"></i> </div>
@@ -23,8 +25,35 @@
             <p class = "abEx"></p><br>
             <p class = "stats">Base Stats: </p><br>
             <p class = "moveSet">Moveset: <br></p><br>
-        </div>  
+        </div>
     </div>
+
+    <div class = item-b>
+        <div class = "monBasic">
+            <div class = "pic" id="sprites"></div>
+          <div class = "arr">  <i id="arrowLeft" class="arrow left"></i><i id="arrowRight" class="arrow right"></i> </div>
+          <div class = "enterName"> <input type = 'text' class="monInput"/> <button type = 'button' onclick = "server()"> Search </button></div>
+            
+            <p class = "name">Name: </p><br>
+            <p class = "type">Type(s): </p><br>
+        </div>
+        <div class = "monBasic">
+            <p class = "abs">Abilities: </p><br>
+            <p class = "abEx"></p><br>
+            <p class = "stats">Base Stats: </p><br>
+            <p class = "moveSet">Moveset: <br></p><br>
+        </div>
+    </div>
+
+        <div>
+            <label class = "compareTrigger">Compare</label>
+            <p>Mon 1:</p>
+            <input class = "monOne" type = 'text'/>
+            <p>Mon 2:</p>
+            <input class = "monTwo" type = 'text'/>
+            <button type = "Submit" onclick="compare()">Compare</button>
+        </div>  
+</div>
 </body>
 
 <script src="scripts.js"></script>
