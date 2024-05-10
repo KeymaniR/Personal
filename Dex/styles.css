@@ -18,6 +18,23 @@ h2{
 }
 
 /*Page Styling*/
+.container{
+    display: grid;
+    grid-template-columns: 50%;
+}
+
+.item-a{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    justify-self: center;
+}
+
+.item-b{
+    grid-column-start: 2;
+    justify-self: center;
+}
+
+
 
 .pic{
     margin: 0 auto;
