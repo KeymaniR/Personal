@@ -5,6 +5,7 @@
 body{
     background-color: var(--mainColor);
     color: white;
+    font-family: Trebuchet MS, sans-serif;
 }
 
 img{
@@ -17,11 +18,45 @@ h2{
     text-align: center;
 }
 
-/*Page Styling*/
-.container{
-    display: grid;
-    grid-template-columns: 50%;
+input{
+    
+    padding: 2px;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #fbfbfb;
+    border: 2px solid transparent;
+    height: 16px;
+    box-shadow: 0 0 0 1px #dddddd, 0 2px 4px 0 rgb(0 0 0 / 7%), 0 1px 1.5px 0 rgb(0 0 0 / 5%);
+    width: 150px;
+    :focus{
+        border: 2px solid #000;
+        border-radius: 4px;
+    }
+
 }
+
+button{
+    
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 6px 18px;
+    border: 1px solid #222222;
+    transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+    background: #fff;
+    color: #222222;
+    :hover {
+        border-color: #000000;
+        background: #f7f7f7;
+    }
+
+}
+
+/*Page Styling*/
 
 .item-a{
     grid-column-start: 1;
@@ -29,9 +64,16 @@ h2{
     justify-self: center;
 }
 
-.item-b{
+.comparison{
     grid-column-start: 2;
+    align-self: end;
+    display: none;
+}
+
+.item-b{
+    grid-column-start: 3;
     justify-self: center;
+    display: none;
 }
 
 
@@ -49,6 +91,12 @@ h2{
 }
 
 .enterName{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.searchBtn{
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -107,5 +155,10 @@ a:visited{
     font-style: italic;
 }
 
+.abExB{
+    margin: auto;
+    text-align: center;
+    font-style: italic;
+}
 
   
